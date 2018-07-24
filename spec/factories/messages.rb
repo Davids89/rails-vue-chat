@@ -1,6 +1,5 @@
 FactoryGirl.define do
-    factory :message do
-        text "test"
-        user { FactoryGirl.create(:user) }
-    end
+  factory :message do
+    text "MyString"
+  end
 end

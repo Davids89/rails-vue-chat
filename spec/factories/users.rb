@@ -1,5 +1,5 @@
 FactoryGirl.define do
-    factory :user do
-        name { Faker::DragonBall.character }
-    end
+  factory :user do
+    name "MyString"
+  end
 end
