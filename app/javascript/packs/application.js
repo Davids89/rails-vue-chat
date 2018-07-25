@@ -9,7 +9,12 @@
 
 import Vue from 'vue/dist/vue.esm';
 import router from './routes.js';
+import Vuex from 'vuex';
 
-const app = new Vue({
-    router,
-}).$mount('#app')
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.appendChild(document.createElement('app'))
+
+    const app = new Vue({
+        router,
+    }).$mount('#app')
+})
