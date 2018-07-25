@@ -1,11 +1,16 @@
 <template>
     <div>
         <h1>Rooms</h1>
+
+        <div v-for="room in rooms" :key="room.id">
+            <chat-item v-bind="room"></chat-item>
+        </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
+    import ChatItem from '../components/chat_element.vue'
 
     export default {
         data: function() {
@@ -13,11 +18,16 @@
                 rooms: []
             }
         },
+        components: {
+            ChatItem
+        },
         methods: {
             loadRooms: function() {
+                const that = this;
                 axios.get('/rooms')
                     .then(function(response){
-                        console.log(response);
+                        that.rooms = response.data
+                        console.log(that.rooms)
                     })
                     .catch(function(error){
                         console.log(error);
