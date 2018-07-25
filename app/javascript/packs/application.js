@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 next(to.secure.redirectTo || '/login');
             }
         } else {
-            next
+            next();
         }
     })
 })
