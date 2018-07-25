@@ -10,11 +10,30 @@
 import Vue from 'vue/dist/vue.esm';
 import router from './routes.js';
 import Vuex from 'vuex';
+import Store from '../vuex/store.js';
+
+Vue.use(Vuex);
+
+const store = new Vuex.Store(Store);
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(document.createElement('app'))
 
     const app = new Vue({
         router,
+        store,
     }).$mount('#app')
+
+    router.beforeEach(function(to, from, next) {
+        if (to.secure && to.secure.protected) {
+            console.log(store);
+            if (store.state.isAuthenticated){
+                next();
+            } else {
+                next(to.secure.redirectTo || '/login');
+            }
+        } else {
+            next
+        }
+    })
 })

@@ -9,7 +9,11 @@ import Rooms from '../components/rooms.vue';
 const router = new VueRouter({
     routes: [
         { path: '/', component: HomeIndex, name: 'root_path' },
-        { path: '/rooms', component: Rooms, name: 'rooms_path'}
+        { path: '/rooms', component: Rooms, name: 'rooms_path',
+            secure: {
+                protected: true,
+                redirectTo: '/login'
+            }}
     ]
 });
 
