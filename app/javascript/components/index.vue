@@ -14,3 +14,29 @@ export default {
 }
 
 </script>
+
+<style lang="sass" scoped>
+
+.login-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .input-wrapper {
+        height: 30px;
+        width: 30%;
+
+        input {
+            width: 80%;
+            border-style: solid;
+            padding: 0 10px 0 10px;
+        }
+
+        input, button {
+            height: inherit;
+        }
+    }
+}
+
+</style>
