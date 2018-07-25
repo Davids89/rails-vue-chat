@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="chatroom-element">
         {{name}}
     </div>
 </template>
@@ -18,7 +18,3 @@
         }
     }
 </script>
-
-<style>
-
-</style>

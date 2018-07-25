@@ -2,7 +2,7 @@
     <div>
         <h1>Rooms</h1>
 
-        <div v-for="room in rooms" :key="room.id">
+        <div v-for="room in rooms" :key="room.id" class="chatroom-list">
             <chat-item v-bind="room"></chat-item>
         </div>
     </div>
