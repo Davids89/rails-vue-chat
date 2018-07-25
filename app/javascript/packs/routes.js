@@ -3,16 +3,16 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import HomeIndex from '../components/index.vue';
-import Rooms from '../components/rooms.vue';
+import HomeIndex from '../views/index.vue';
+import Rooms from '../views/rooms.vue';
 
 const router = new VueRouter({
     routes: [
         { path: '/', component: HomeIndex, name: 'root_path' },
         { path: '/rooms', component: Rooms, name: 'rooms_path',
-            secure: {
+            meta: {
                 protected: true,
-                redirectTo: '/login'
+                redirectTo: '/'
             }}
     ]
 });

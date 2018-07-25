@@ -16,6 +16,18 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store(Store);
 
+router.beforeEach(function(to, from, next) {
+    if (to.meta && to.meta.protected) {
+        if (store.state.isAuthenticated){
+            next();
+        } else {
+            next(to.meta.redirectTo || '/');
+        }
+    } else {
+        next();
+    }
+})
+
 document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(document.createElement('app'))
 
@@ -23,17 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
         router,
         store,
     }).$mount('#app')
-
-    router.beforeEach(function(to, from, next) {
-        if (to.secure && to.secure.protected) {
-            console.log(store);
-            if (store.state.isAuthenticated){
-                next();
-            } else {
-                next(to.secure.redirectTo || '/login');
-            }
-        } else {
-            next();
-        }
-    })
 })
