@@ -1,4 +1,4 @@
-3.times do
-    user = User.create(name: Faker::HarryPotter.character)
-    user.save
+for i in 1..3
+    chatroom = Chatroom.create(name: "Sala #{i}")
+    chatroom.save
 end

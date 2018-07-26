@@ -8,9 +8,31 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import Vue from 'vue/dist/vue.esm';
-import App from '../app.vue';
 import router from './routes.js';
+import Vuex from 'vuex';
+import Store from '../vuex/store.js';
 
-const app = new Vue({
-    router,
-}).$mount('#app')
+Vue.use(Vuex);
+
+const store = new Vuex.Store(Store);
+
+/*router.beforeEach(function(to, from, next) {
+    if (to.meta && to.meta.protected) {
+        if (store.state.isAuthenticated){
+            next();
+        } else {
+            next(to.meta.redirectTo || '/');
+        }
+    } else {
+        next();
+    }
+})*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.appendChild(document.createElement('app'))
+
+    const app = new Vue({
+        router,
+        store,
+    }).$mount('#app')
+})
