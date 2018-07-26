@@ -3,7 +3,7 @@
         <button v-on:click="showModal">
             Nueva sala
         </button>
-        <chat-room-modal v-if="modalVisible" @dismiss="hideModal"></chat-room-modal>
+        <chat-room-modal v-if="modalVisible" @dismiss="hideModal" @save="hideModal"></chat-room-modal>
     </div>
 </template>
 
@@ -13,7 +13,7 @@
     export default {
         data: function () {
             return {
-                 modalVisible: false
+                 modalVisible: false,
             }
         },
         components: {
@@ -26,6 +26,13 @@
             hideModal: function() {
                 this.modalVisible = false
             }
+        },
+        mounted: function() {
+            document.addEventListener("keydown", (e) => {
+                if (this.modalVisible && e.keyCode == 27) {
+                    this.modalVisible = false
+                }
+            })
         }
     }
 </script>

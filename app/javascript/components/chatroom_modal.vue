@@ -1,38 +1,44 @@
 <template>
-    <div class="modal-mask" @click="$emit('dismiss')">
-        <div class="modal-wrapper">
+    <!-- template for the modal component -->
+    <transition name="modal">
+        <div class="modal-mask" @click="$emit('dismiss')">
             <div class="modal-container" @click.stop>
-
                 <div class="modal-header">
-                    <slot name="header">
-                    default header
-                    </slot>
+                    <h3>Crear nueva sala</h3>
                 </div>
-
                 <div class="modal-body">
-                    <slot name="body">
-                    default body
-                    </slot>
+                    <label class="form-label">
+                        Nombre de la sala
+                        <input class="form-control" v-model="chatroom_name">
+                    </label>
                 </div>
-
-                <div class="modal-footer">
-                    <slot name="footer">
-                    default footer
-                    <button class="modal-default-button" @click="$emit('close')">
-                        OK
-                    </button>
-                    <button class="modal-default-button" @click="$emit('dismiss')">
+                <div class="modal-footer text-right">
+                    <button class="modal-default-button" @click="close">
                         Cancelar
                     </button>
-                    </slot>
+
+                    <button class="modal-default-button" @click="$emit('save')">
+                        Guardar
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
+
 
 <script>
     export default {
-        
+        data: function () {
+            return {
+                chatroom_name: ""
+            }
+        },
+        methods: {
+            close: function () {
+                this.chatroom_name = ""
+                this.$emit('dismiss')
+            }
+        }
     }
 </script>

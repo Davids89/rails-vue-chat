@@ -31,7 +31,6 @@
                 axios.get('/rooms')
                     .then(function(response){
                         that.rooms = response.data
-                        console.log(that.rooms)
                     })
                     .catch(function(error){
                         console.log(error);
