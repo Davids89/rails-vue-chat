@@ -42,7 +42,7 @@
                     })
             },
             connectWebSocket: function() {
-                this.connection = App.cable .subscriptions.create({
+                this.connection = App.cable.subscriptions.create({
                     channel: "RoomListChannel"
                 }, {
                     connected: () => {
