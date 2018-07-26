@@ -1,5 +1,5 @@
 <template>
-    <div class="chatroom-element">
+    <div class="chatroom-element" v-on:click="openChat">
         {{name}}
     </div>
 </template>
@@ -14,6 +14,11 @@
             name: {
                 type: String,
                 required: true
+            }
+        },
+        methods: {
+            openChat: function() {
+                this.$router.push('/rooms/' + this._id.$oid)
             }
         }
     }
