@@ -18,7 +18,8 @@
     export default {
         data: function() {
             return {
-                rooms: []
+                rooms: [],
+                connection: {}
             }
         },
         components: {
@@ -35,10 +36,20 @@
                     .catch(function(error){
                         console.log(error);
                     })
+            },
+            connectWebSocket: function() {
+                this.connection = App.cable .subscriptions.create({
+                    channel: "RoomListChannel"
+                }, {
+                    connected: () => {
+                        console.log("Socket created")
+                    }
+                })
             }
         },
         created: function() {
             this.loadRooms();
+            this.connectWebSocket()
         }
     }
 </script>
