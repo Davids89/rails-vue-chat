@@ -3,12 +3,13 @@
         <button v-on:click="showModal" class="add-chat-button">
             Nueva sala
         </button>
-        <chat-room-modal v-if="modalVisible" @dismiss="hideModal" @save="hideModal"></chat-room-modal>
+        <chat-room-modal v-if="modalVisible" @dismiss="hideModal" @save="createRoom"></chat-room-modal>
     </div>
 </template>
 
 <script>
     import ChatRoomModal from './chatroom_modal.vue'
+    import axios from 'axios'
 
     export default {
         data: function () {
@@ -25,6 +26,13 @@
             },
             hideModal: function() {
                 this.modalVisible = false
+            },
+            createRoom: function(name) {
+                axios.post('/rooms', {
+                    room: {
+                        name: name
+                    }
+                })
             }
         },
         mounted: function() {
