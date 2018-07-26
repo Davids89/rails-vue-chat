@@ -15,6 +15,10 @@
     import ChatItem from '../components/chat_element.vue'
     import NewRoomButton from '../components/add_chat_button.vue'
 
+    let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
+    axios.defaults.headers.common['X-CSRF-Token'] = token
+    axios.defaults.headers.common['Accept'] = 'application/json'
+
     export default {
         data: function() {
             return {
@@ -43,6 +47,9 @@
                 }, {
                     connected: () => {
                         console.log("Socket created")
+                    },
+                    received: (data) => {
+                        this.rooms.unshift(data.room)
                     }
                 })
             }
