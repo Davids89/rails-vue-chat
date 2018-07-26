@@ -17,7 +17,7 @@
                         Cancelar
                     </button>
 
-                    <button class="modal-default-button" @click="$emit('save')">
+                    <button class="modal-default-button" @click="save">
                         Guardar
                     </button>
                 </div>
@@ -38,6 +38,10 @@
             close: function () {
                 this.chatroom_name = ""
                 this.$emit('dismiss')
+            },
+            save: function() {
+                this.$emit('save', this.chatroom_name)
+                this.close()
             }
         }
     }
