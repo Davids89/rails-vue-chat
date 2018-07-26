@@ -15,6 +15,9 @@
 </template>
 
 <script>
+
+    import axios from 'axios'
+
     export default {
         data: function () {
             return {
@@ -38,12 +41,22 @@
                     }
                 })
             },
+            loadChat: function() {
+                axios.get('/rooms/' + this.id)
+                    .then(function(response){
+                        console.log(response)
+                    })
+                    .catch(function(error){
+                        console.log(error)
+                    })
+            },
             sendMessage: function() {
                 this.connection.send({ message: this.message })
             }
         },
         created: function() {
             this.connectWebSocket()
+            this.loadChat()
         }
     }
 </script>

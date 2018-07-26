@@ -12,6 +12,14 @@ class RoomsController < ApplicationController
     end
   end
 
+  def show
+    print "estoy aqui"
+    print params
+    messages = Message.where("room": params["id"])
+
+    render json: { messages: messages }
+  end
+
   private
   def room_params
     params.require(:room).permit(:name)
