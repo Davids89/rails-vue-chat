@@ -4,7 +4,9 @@
 
         <div class="chat-wrapper">
             <div class="messages-wrapper">
-
+                <div v-for="message in messages" :key="message._id.$oid">
+                    <message v-bind="message"></message>
+                </div>
             </div>
 
             <div class="input-wrapper">
@@ -17,34 +19,41 @@
 <script>
 
     import axios from 'axios'
+    import Message from '../components/message_element.vue'
 
     export default {
         data: function () {
             return {
                 message: "",
                 connection: {},
-                id: this.$route.params.id
+                id: this.$route.params.id,
+                messages: []
             }
+        },
+        components: {
+            Message
         },
         methods: {
             connectWebSocket: function() {
+                const that = this
                 this.connection = App.cable.subscriptions.create({
                     channel: "RoomChannel",
                     room_id: this.id,
-                    user: /* this.$store.state.username */ "aaa"
+                    user: this.$store.state.username
                 }, {
                     connected: () => {
                         console.log("Socket created")
                     },
                     received: (data) => {
-                        console.log(data)
+                        that.messages.push(data)
                     }
                 })
             },
             loadChat: function() {
+                const that = this
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
-                        console.log(response)
+                        that.messages = response.data.messages
                     })
                     .catch(function(error){
                         console.log(error)
