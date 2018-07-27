@@ -11,23 +11,19 @@ require 'factory_girl_rails'
 require 'capybara/rspec'
 
 options = {js_errors: false}
-require "selenium/webdriver"
 
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, options)
+Capybara.server = :puma
+require 'rack_session_access/capybara'
+require 'capybara/poltergeist'
+
+RSpec.configure do |conf|
+  conf.include FactoryGirl::Syntax::Methods
 end
 
-Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w(headless disable-gpu) }
-  )
-
-  Capybara::Selenium::Driver.new app,
-    browser: :chrome,
-    desired_capabilities: capabilities
+Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, options)
 end
-
-Capybara.javascript_driver = :headless_chrome
+Capybara.javascript_driver = :poltergeist
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end

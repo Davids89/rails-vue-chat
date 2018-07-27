@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Antes de lanzar el script install.sh
+
+Instalar bundler
+Ejecutar mongo (mongod)
+
+sh install.sh
+
+
