@@ -46,7 +46,14 @@
                     },
                     received: (data) => {
                         that.messages.push(data)
+                        that.scrollDownChat()
                     }
+                })
+            },
+            scrollDownChat: function() {
+                this.$nextTick(() => {
+                    const container = this.$el.querySelector('.messages-wrapper')
+                    container.scrollTop = container.scrollHeight
                 })
             },
             loadChat: function() {
@@ -54,6 +61,7 @@
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
                         that.messages = response.data.messages
+                        that.scrollDownChat()
                     })
                     .catch(function(error){
                         console.log(error)
@@ -61,6 +69,7 @@
             },
             sendMessage: function() {
                 this.connection.send({ message: this.message })
+                this.message = ''
             }
         },
         created: function() {
