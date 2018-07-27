@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
   def show
     print "estoy aqui"
     print params
-    messages = Message.where("room": params["id"])
+    messages = Message.where("room": params["id"]).formatted
 
     render json: { messages: messages }
   end
