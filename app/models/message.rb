@@ -8,5 +8,5 @@ class Message
 
   validates_presence_of :text
 
-  scope :formatted, -> { order_by(:created_at => 'asc').limit(20) }
+  scope :formatted, -> { order_by(:created_at => 'desc').limit(20) }
 end

@@ -13,11 +13,10 @@ class RoomsController < ApplicationController
   end
 
   def show
-    print "estoy aqui"
     print params
     messages = Message.where("room": params["id"]).formatted
 
-    render json: { messages: messages }
+    render json: { messages: messages.reverse }
   end
 
   private
