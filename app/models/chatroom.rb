@@ -7,6 +7,8 @@ class Chatroom
 
   after_create :new_room_broadcast
 
+  validates_presence_of :name
+
   private
   def new_room_broadcast
     ActionCable.server.broadcast "room_list", room: self

@@ -1,7 +1,7 @@
 <template>
     <div class="login-wrapper">
         <div class="input-wrapper">
-            <input v-model="username" type="text" placeholder="Usuario" id="username">
+            <input v-model="username" type="text" placeholder="Usuario" id="username" name="username">
             <button v-on:click="login">Entrar</button>
         </div>
     </div>

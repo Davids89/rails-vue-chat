@@ -11,6 +11,7 @@ import Vue from 'vue/dist/vue.esm';
 import router from './routes.js';
 import Vuex from 'vuex';
 import Store from '../vuex/store.js';
+import App from '../app.vue'
 
 Vue.use(Vuex);
 
@@ -34,5 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const app = new Vue({
         router,
         store,
-    }).$mount('#app')
+        render: h => h(App)
+    }).$mount('app')
 })
