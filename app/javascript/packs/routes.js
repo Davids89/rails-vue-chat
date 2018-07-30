@@ -6,10 +6,12 @@ Vue.use(VueRouter);
 import HomeIndex from '../views/index.vue';
 import Rooms from '../views/rooms.vue';
 import Chat from '../views/chat.vue';
+import Redirector from '../redirector.vue'
 
 const router = new VueRouter({
     routes: [
-        { path: '/', component: HomeIndex, name: 'root_path' },
+        { path: '/', component: Redirector },
+        { path: '/login', component: HomeIndex},
         { path: '/rooms', component: Rooms, name: 'rooms_path',
             meta: {
                 protected: true,

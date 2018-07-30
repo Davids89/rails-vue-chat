@@ -30,11 +30,12 @@ router.beforeEach(function(to, from, next) {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.appendChild(document.createElement('app'))
+
+    document.body.appendChild(document.createElement('vue-app'))
 
     const app = new Vue({
         router,
         store,
         render: h => h(App)
-    }).$mount('app')
+    }).$mount('vue-app')
 })
