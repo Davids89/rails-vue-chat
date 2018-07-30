@@ -16,7 +16,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store(Store);
 
-router.beforeEach(function(to, from, next) {
+/*router.beforeEach(function(to, from, next) {
     if (to.meta && to.meta.protected) {
         if (store.state.isAuthenticated){
             next();
@@ -26,7 +26,7 @@ router.beforeEach(function(to, from, next) {
     } else {
         next();
     }
-})
+})*/
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(document.createElement('app'))

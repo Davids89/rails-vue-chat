@@ -1,5 +1,25 @@
-.chatroom-list
-    height: 100%
-    display: flex
-    justify-content: center
-    align-items: center
+@import '../variables.sass'
+
+.chatroom-list-wrapper
+    .header
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+
+        img.logo
+            max-width: 70px
+
+        .new-room-button
+            min-height: 50px
+            min-width: 120px
+            border: none
+            background-color: $grey
+            box-shadow: 1px 1px 2px 1px $shadow_grey
+            margin-right: 10%
+    
+    .chatroom-list
+        height: 100%
+        display: flex
+        justify-content: center
+        align-items: center
