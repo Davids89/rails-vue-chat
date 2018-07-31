@@ -30,4 +30,9 @@ Ejecutar mongo (mongod)
 
 sh install.sh
 
+Para ejecutar los tests
+
+rake assets:precompile
+bundle exec rspec
+
 
