@@ -8,15 +8,15 @@
                 </div>
                 <div class="modal-body">
                     <label class="form-label">
-                        <input class="form-control" v-model="chatroom_name" placeholder="Nombre de la sala">
+                        <input name="room_name" class="form-control" v-model="chatroom_name" placeholder="Nombre de la sala">
                     </label>
                 </div>
                 <div class="modal-footer text-right">
-                    <button class="modal-default-button" @click="close">
+                    <button class="modal-default-button cancel-button" @click="close">
                         Cancelar
                     </button>
 
-                    <button class="modal-default-button" @click="save">
+                    <button class="modal-default-button save-button" @click="save">
                         Guardar
                     </button>
                 </div>
