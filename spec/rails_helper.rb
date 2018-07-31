@@ -51,5 +51,24 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include FactoryGirl::Syntax::Methods # this allows to use factory girl gem's methods
-  # this is to test javascript with capybara  
+
+  #config.before(:suite) do
+  #  DatabaseCleaner.clean_with(:truncation)
+  #end
+ 
+  #config.before(:each) do
+  #  DatabaseCleaner.strategy = :truncation
+  #end
+ 
+  #config.before(:each, :js => true) do
+  #  DatabaseCleaner.strategy = :truncation
+  #end
+ 
+  #config.before(:each) do
+  #  DatabaseCleaner.start
+  #end
+ 
+  #config.after(:each) do
+  #  DatabaseCleaner.clean
+  #end
 end

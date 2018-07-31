@@ -6,8 +6,8 @@
             <new-room-button></new-room-button>
         </div>
 
-        <div v-for="room in rooms" :key="room.id" class="chatroom-list">
-            <chat-item v-bind="room"></chat-item>
+        <div class="chatroom-list">
+            <chat-item v-bind="room" v-for="room in rooms" :key="room.id"></chat-item>
         </div>
     </div>
 </template>

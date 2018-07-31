@@ -48,6 +48,7 @@ end
 
 group :test do
   gem 'rack_session_access'
+  gem 'database_cleaner'
 end
 
 group :development do

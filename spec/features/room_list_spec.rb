@@ -9,8 +9,11 @@ RSpec.feature "User enters in room list", type: :feature do
   end
 
   scenario 'User enter in the room list screen', js: true do
+    create :chatroom
     visit '/#/rooms'
-    # print page.body
-    # expect(page).to have_css('.chatroom-list')
+    sleep 5
+    print page.html
+    expect(page).to have_selector('.chatroom-list')
+    #expect(page).to have_selector('')
   end
 end
