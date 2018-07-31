@@ -1,0 +1,195 @@
+/* line 1, d:/cosas/vueapp/app/assets/stylesheets/components/add_chat_button.scss */
+.add-chat-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+/* line 5, d:/cosas/vueapp/app/assets/stylesheets/components/add_chat_button.scss */
+.add-chat-button-wrapper .add-chat-button {
+  margin: 0 5% 0 0;
+}
+/* line 1, d:/cosas/vueapp/app/assets/stylesheets/components/chat_element.scss */
+.chatroom-element {
+  width: 70%;
+  height: 30px;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px 20px 5px 20px;
+}
+
+/* line 9, d:/cosas/vueapp/app/assets/stylesheets/components/chat_element.scss */
+.chatroom-element:hover {
+  cursor: pointer;
+}
+/* line 1, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 5, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity .3s ease;
+}
+
+/* line 16, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.modal-container {
+  width: 300px;
+  margin: 40px auto 0;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 27, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+/* line 32, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.modal-body {
+  margin: 20px 0;
+}
+
+/* line 36, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 40, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.form-label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* line 45, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.form-label > .form-control {
+  margin-top: 0.5em;
+}
+
+/* line 49, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  line-height: 1.5;
+  border: 1px solid #ddd;
+}
+
+/*
+* The following styles are auto-applied to elements with
+* transition="modal" when their visibility is toggled
+* by Vue.js.
+*
+* You can easily play with the modal transition by editing
+* these styles.
+*/
+/* line 66, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.modal-enter {
+  opacity: 0;
+}
+
+/* line 70, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.modal-leave-active {
+  opacity: 0;
+}
+
+/* line 74, d:/cosas/vueapp/app/assets/stylesheets/components/modal.scss */
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* line 1, d:/cosas/vueapp/app/assets/stylesheets/views/chat.scss */
+.chat-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* line 8, d:/cosas/vueapp/app/assets/stylesheets/views/chat.scss */
+.chat-container .chat-wrapper {
+  width: 80%;
+  height: 80%;
+}
+/* line 12, d:/cosas/vueapp/app/assets/stylesheets/views/chat.scss */
+.chat-container .chat-wrapper .messages-wrapper {
+  min-height: 90%;
+  border: 1px solid grey;
+  max-height: 90%;
+  overflow-y: scroll;
+}
+/* line 19, d:/cosas/vueapp/app/assets/stylesheets/views/chat.scss */
+.chat-container .chat-wrapper .input-wrapper {
+  min-height: 10%;
+}
+/* line 21, d:/cosas/vueapp/app/assets/stylesheets/views/chat.scss */
+.chat-container .chat-wrapper .input-wrapper input {
+  min-width: 90%;
+  height: 30px;
+}
+/* line 26, d:/cosas/vueapp/app/assets/stylesheets/views/chat.scss */
+.chat-container .chat-wrapper .input-wrapper button {
+  min-width: 10%;
+  height: 30px;
+}
+/* line 1, d:/cosas/vueapp/app/assets/stylesheets/views/index.scss */
+.login-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 7, d:/cosas/vueapp/app/assets/stylesheets/views/index.scss */
+.login-wrapper .input-wrapper {
+  height: 30px;
+  width: 30%;
+}
+/* line 11, d:/cosas/vueapp/app/assets/stylesheets/views/index.scss */
+.login-wrapper .input-wrapper input {
+  width: 80%;
+  border-style: solid;
+  padding: 0 10px 0 10px;
+}
+/* line 17, d:/cosas/vueapp/app/assets/stylesheets/views/index.scss */
+.login-wrapper .input-wrapper input, .login-wrapper .input-wrapper button {
+  height: inherit;
+}
+/* line 1, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.scss */
+.chatroom-list {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, d:/cosas/vueapp/app/assets/stylesheets/application.scss */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
