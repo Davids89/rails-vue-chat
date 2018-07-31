@@ -1,6 +1,7 @@
 <template>
     <div class="chat-container">
-        <h1>Chat</h1>
+        
+        <img class="logo" :src=src>
 
         <div class="chat-wrapper">
             <div class="messages-wrapper">
@@ -20,6 +21,7 @@
 
     import axios from 'axios'
     import Message from '../components/message_element.vue'
+    import logo from '../../assets/images/logo.png'
 
     export default {
         data: function () {
@@ -27,7 +29,8 @@
                 message: "",
                 connection: {},
                 id: this.$route.params.id,
-                messages: []
+                messages: [],
+                src: logo
             }
         },
         components: {
