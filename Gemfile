@@ -38,15 +38,12 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 
-  gem 'rspec-rails', '~> 3.6' # testing framework
-  gem 'factory_girl_rails' # for add sample data
-  gem 'rails-controller-testing' #to test requests
-  gem 'capybara-selenium' # simulate user interaction
-  gem 'poltergeist' # javascript support for the tests
-  gem 'chromedriver-helper'
+  # End to end testing of your rails apps (Rails 5.1+ supports this)
+  gem 'capybara', '~> 2.13'
+  gem 'poltergeist'
 end
 
 group :test do

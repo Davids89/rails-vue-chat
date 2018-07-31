@@ -6,22 +6,12 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-require 'capybara/poltergeist'
-require 'factory_girl_rails'
-require 'capybara/rspec'
-
-options = {js_errors: false}
-
 Capybara.server = :puma
 require 'rack_session_access/capybara'
+require 'factory_girl_rails'
 require 'capybara/poltergeist'
-
-RSpec.configure do |conf|
-  conf.include FactoryGirl::Syntax::Methods
-end
-
 Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, options)
+    Capybara::Poltergeist::Driver.new(app, window_size: [1600, 768])
 end
 Capybara.javascript_driver = :poltergeist
 # Requires supporting ruby files with custom matchers and macros, etc, in
