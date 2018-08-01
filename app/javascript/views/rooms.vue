@@ -4,6 +4,7 @@
         <div class="header">
             <img class="logo" :src=src>
             <new-room-button></new-room-button>
+            <button class="exit-button" v-on:click="logout">Salir</button>
         </div>
 
         <div class="chatroom-list">
@@ -56,6 +57,10 @@
                         this.rooms.unshift(data.room)
                     }
                 })
+            },
+            logout: function() {
+                this.$store.commit('login', '')
+                this.$router.push('/login')
             }
         },
         created: function() {
