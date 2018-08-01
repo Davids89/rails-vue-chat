@@ -26,7 +26,6 @@ export default {
     methods: {
         login: function () {
             if (this.username.length > 2) {
-                console.log(this.$store)
                 this.$store.commit('login', this.username);
                 this.$router.push('/rooms');
             } else {
