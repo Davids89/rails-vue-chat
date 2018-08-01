@@ -4,7 +4,6 @@ class RoomChannel < ActionCable::Channel::Base
     end
 
     def receive(data)
-        print "estoy aqui"
         message = Message.new(text: data["message"], user: params[:user], room: params[:room_id])
 
         if message.save
@@ -19,7 +18,8 @@ class RoomChannel < ActionCable::Channel::Base
 
     def msg_response(data)
         {
-            message: data.text,
+            _id: data.id,
+            text: data.text,
             user: data.user,
             room: data.room
         }

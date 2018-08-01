@@ -1,10 +1,13 @@
 <template>
     <div class="chat-container">
-        <h1>Chat</h1>
+        
+        <img class="logo" :src=src>
 
         <div class="chat-wrapper">
             <div class="messages-wrapper">
-
+                <div v-for="message in messages" :key="message._id.$oid">
+                    <message v-bind="message"></message>
+                </div>
             </div>
 
             <div class="input-wrapper">
@@ -17,34 +20,51 @@
 <script>
 
     import axios from 'axios'
+    import Message from '../components/message_element.vue'
+    import logo from '../../assets/images/logo.png'
 
     export default {
         data: function () {
             return {
                 message: "",
                 connection: {},
-                id: this.$route.params.id
+                id: this.$route.params.id,
+                messages: [],
+                src: logo
             }
+        },
+        components: {
+            Message
         },
         methods: {
             connectWebSocket: function() {
+                const that = this
                 this.connection = App.cable.subscriptions.create({
                     channel: "RoomChannel",
                     room_id: this.id,
-                    user: /* this.$store.state.username */ "aaa"
+                    user: this.$store.state.username
                 }, {
                     connected: () => {
                         console.log("Socket created")
                     },
                     received: (data) => {
-                        console.log(data)
+                        that.messages.push(data)
+                        that.scrollDownChat()
                     }
                 })
             },
+            scrollDownChat: function() {
+                this.$nextTick(() => {
+                    const container = this.$el.querySelector('.messages-wrapper')
+                    container.scrollTop = container.scrollHeight
+                })
+            },
             loadChat: function() {
+                const that = this
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
-                        console.log(response)
+                        that.messages = response.data.messages
+                        that.scrollDownChat()
                     })
                     .catch(function(error){
                         console.log(error)
@@ -52,6 +72,7 @@
             },
             sendMessage: function() {
                 this.connection.send({ message: this.message })
+                this.message = ''
             }
         },
         created: function() {
