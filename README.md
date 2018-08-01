@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Antes de lanzar el script de configuracion `install.sh`
 
-Things you may want to cover:
+Instalar bundler
+Ejecutar mongo (mongod)
 
-* Ruby version
+Para instalar todas las dependencias y configurar la base de datos: `sh install.sh`
 
-* System dependencies
+Para ejecutar los tests
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rake assets:precompile`
+`bundle exec rspec`

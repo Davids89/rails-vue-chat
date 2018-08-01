@@ -8,16 +8,15 @@
                 </div>
                 <div class="modal-body">
                     <label class="form-label">
-                        Nombre de la sala
-                        <input class="form-control" v-model="chatroom_name">
+                        <input name="room_name" class="form-control" v-model="chatroom_name" placeholder="Nombre de la sala">
                     </label>
                 </div>
                 <div class="modal-footer text-right">
-                    <button class="modal-default-button" @click="close">
+                    <button class="modal-default-button cancel-button" @click="close">
                         Cancelar
                     </button>
 
-                    <button class="modal-default-button" @click="save">
+                    <button class="modal-default-button save-button" @click="save">
                         Guardar
                     </button>
                 </div>
@@ -40,8 +39,10 @@
                 this.$emit('dismiss')
             },
             save: function() {
-                this.$emit('save', this.chatroom_name)
-                this.close()
+                if (this.chatroom_name.length > 0) {
+                    this.$emit('save', this.chatroom_name)
+                    this.close()
+                }
             }
         }
     }

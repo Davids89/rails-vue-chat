@@ -14,8 +14,10 @@
  *= require_self
  */
 
- html, body, #app {
+ html, body, .app {
     height: 100%;
     margin: 0;
     overflow: hidden;
+    background-color: #F5F3F3;
+    font-family: Helvetica, Arial, sans-serif;
 }

@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <h1>Rooms</h1>
+    <div class="chatroom-list-wrapper">
 
-        <new-room-button></new-room-button>
+        <div class="header">
+            <img class="logo" :src=src>
+            <new-room-button></new-room-button>
+            <button class="exit-button" v-on:click="logout">Salir</button>
+        </div>
 
-        <div v-for="room in rooms" :key="room.id" class="chatroom-list">
-            <chat-item v-bind="room"></chat-item>
+        <div class="chatroom-list">
+            <chat-item v-bind="room" v-for="room in rooms" :key="room.id"></chat-item>
         </div>
     </div>
 </template>
@@ -14,6 +17,7 @@
     import axios from 'axios'
     import ChatItem from '../components/chat_element.vue'
     import NewRoomButton from '../components/add_chat_button.vue'
+    import logo from '../../assets/images/logo.png'
 
     let token = document.getElementsByName('csrf-token')[0].getAttribute('content')
     axios.defaults.headers.common['X-CSRF-Token'] = token
@@ -23,7 +27,8 @@
         data: function() {
             return {
                 rooms: [],
-                connection: {}
+                connection: {},
+                src: logo
             }
         },
         components: {
@@ -52,6 +57,10 @@
                         this.rooms.unshift(data.room)
                     }
                 })
+            },
+            logout: function() {
+                this.$store.commit('login', '')
+                this.$router.push('/login')
             }
         },
         created: function() {

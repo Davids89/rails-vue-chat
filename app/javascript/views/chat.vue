@@ -1,6 +1,7 @@
 <template>
     <div class="chat-container">
-        <h1>Chat</h1>
+        
+        <img class="logo" :src=src>
 
         <div class="chat-wrapper">
             <div class="messages-wrapper">
@@ -20,6 +21,7 @@
 
     import axios from 'axios'
     import Message from '../components/message_element.vue'
+    import logo from '../../assets/images/logo.png'
 
     export default {
         data: function () {
@@ -27,7 +29,8 @@
                 message: "",
                 connection: {},
                 id: this.$route.params.id,
-                messages: []
+                messages: [],
+                src: logo
             }
         },
         components: {
@@ -46,7 +49,14 @@
                     },
                     received: (data) => {
                         that.messages.push(data)
+                        that.scrollDownChat()
                     }
+                })
+            },
+            scrollDownChat: function() {
+                this.$nextTick(() => {
+                    const container = this.$el.querySelector('.messages-wrapper')
+                    container.scrollTop = container.scrollHeight
                 })
             },
             loadChat: function() {
@@ -54,6 +64,7 @@
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
                         that.messages = response.data.messages
+                        that.scrollDownChat()
                     })
                     .catch(function(error){
                         console.log(error)
@@ -61,6 +72,7 @@
             },
             sendMessage: function() {
                 this.connection.send({ message: this.message })
+                this.message = ''
             }
         },
         created: function() {
