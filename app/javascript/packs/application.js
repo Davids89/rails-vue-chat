@@ -30,6 +30,8 @@ router.beforeEach(function(to, from, next) {
     }
 })
 
+Vue.config.productionTip = false
+
 document.addEventListener('DOMContentLoaded', () => {
 
     document.body.appendChild(document.createElement('vue-app'))

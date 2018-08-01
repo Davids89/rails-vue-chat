@@ -11,7 +11,6 @@ RSpec.feature "User enters in room list", type: :feature do
   scenario 'User enter in the room list screen', js: true do
     3.times { create :chatroom }
     visit '/#/rooms'
-    print page.html
     expect(page).to have_selector('.chatroom-list')
     expect(page).to have_selector('.chatroom-element'), count: 3
   end
