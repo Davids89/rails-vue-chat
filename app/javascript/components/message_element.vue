@@ -1,5 +1,5 @@
 <template>
-    <div class="message-wrapper" :class="{'grey-message': index % 2 == 0, 'my-message': user == username}">
+    <div class="message-wrapper" :class="{'my-message': user == username}">
         <div class="user-wrapper">
             <img :src=src class="user-avatar">
             <span class="user-message">{{ user }}</span>
@@ -23,9 +23,6 @@
             },
             user: {
                 type: String
-            },
-            index: {
-                type: Number
             }
         },
         data: function() {

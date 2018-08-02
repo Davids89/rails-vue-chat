@@ -49,7 +49,6 @@
                         console.log("Socket created")
                     },
                     received: (data) => {
-                        data.index = that.messages.length
                         that.messages.push(data)
                         that.scrollDownChat()
                     }
@@ -66,11 +65,6 @@
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
                         that.messages = response.data.messages
-
-                        for(var i = 0; i < that.messages.length; i++){
-                            that.messages[i].index = i
-                        }
-
                         that.scrollDownChat()
                     })
                     .catch(function(error){
