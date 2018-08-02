@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Chatroom.new(room_params)
+    @room.online_users = Random.new.rand(100)
 
     if @room.save
       render json: @room

@@ -16,34 +16,45 @@
         img.logo
             max-width: 70px
 
+        .buttons-container
+            display: flex
+            flex-direction: row
+
     .list-wrapper
         width: 80%
         align-self: center
         display: flex
         flex-direction: column
         align-items: center
+        overflow-y: scroll
 
         .options-bar
-            width: 80%
+            width: 100%
+            margin-top: 2vw
             
             .new-room-button
                 align-self: flex-start
 
         .chatroom-list
-            height: 100%
-            width: 80%
+            width: 100%
             display: flex
             flex-direction: row
+            justify-content: space-between
+            margin-top: 3vw
             flex-wrap: wrap
-            justify-content: flex-start
+            padding: 10px 10px 10px 10px
 
     .new-room-button, .exit-button
-        height: 2.5vw
+        height: 4vw
         min-height: 20px
         width: 10vw
         min-width: 80px
-        border: none
-        background-color: $grey
+        border: 2px solid $buttons_blue
+        background-color: white
+        cursor: pointer
+        border-radius: 2px
 
     .new-room-button:hover, .exit-button:hover
-        background-color: $shadow_grey
+        background-color: $buttons_blue
+        border: 2px solid white
+        color: white

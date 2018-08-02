@@ -2,24 +2,28 @@
     <div class="chatroom-list-wrapper">
         <div class="header">
             <img class="logo" :src=src>
-            <button class="exit-button" v-on:click="logout">Salir</button>
+            <div class="buttons-container">
+                <new-room-button></new-room-button>
+                <button class="exit-button" v-on:click="logout">Salir</button>
+            </div>
+            
         </div>
 
         <div class="list-wrapper">
-            <div class="options-bar">
-                <new-room-button></new-room-button>
+            <div class="chatroom-list">
+                <chat-item v-bind="room" v-for="room in rooms" :key="room.id"></chat-item>
             </div>
 
-        <div class="chatroom-list">
-            <chat-item v-bind="room" v-for="room in rooms" :key="room.id"></chat-item>
-        </div>
+            <div class="options-bar">
+                
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios'
-    import ChatItem from '../components/chat_element.vue'
+    import ChatItem from '../components/chatroom_element.vue'
     import NewRoomButton from '../components/add_chat_button.vue'
     import logo from '../../assets/images/logo.png'
 

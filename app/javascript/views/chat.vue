@@ -1,13 +1,14 @@
 <template>
     <div class="chat-container">
         
-        <img class="logo" :src=src>
+        <div class="chat-header">
+            <img class="logo" :src=src>
+            <button v-on:click="goBack">Volver</button>
+        </div>
 
         <div class="chat-wrapper">
             <div class="messages-wrapper">
-                <div v-for="message in messages" :key="message._id.$oid">
-                    <message v-bind="message"></message>
-                </div>
+                <message v-bind="message" v-for="message in messages" :key="message._id.$oid"></message>
             </div>
 
             <div class="input-wrapper">
@@ -78,6 +79,9 @@
                 if (event.keyCode == 13) {
                     this.sendMessage()
                 }
+            },
+            goBack: function() {
+                this.$router.push('/rooms')
             }
         },
         created: function() {
