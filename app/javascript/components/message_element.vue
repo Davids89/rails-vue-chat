@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <p>{{ user }} > {{ text }}</p>
+    <div class="message-wrapper">
+        <span class="user-message">{{ user }}</span> > <span class="text-message">{{ text }}</span>
     </div>
 </template>
 
