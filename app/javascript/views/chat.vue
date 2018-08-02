@@ -11,7 +11,7 @@
             </div>
 
             <div class="input-wrapper">
-                <input type="text" placeholder="..." v-model="message"><button v-on:click="sendMessage">Enviar</button>
+                <input type="text" placeholder="..." v-model="message" v-on:keyup="keyinput"><button v-on:click="sendMessage">Enviar</button>
             </div>
         </div>
     </div>
@@ -73,6 +73,11 @@
             sendMessage: function() {
                 this.connection.send({ message: this.message })
                 this.message = ''
+            },
+            keyinput: function(event) {
+                if (event.keyCode == 13) {
+                    this.sendMessage()
+                }
             }
         },
         created: function() {
