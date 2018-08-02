@@ -26,6 +26,7 @@
         display: flex
         flex-direction: column
         align-items: center
+        overflow-y: scroll
 
         .options-bar
             width: 100%
@@ -36,23 +37,22 @@
 
         .chatroom-list
             width: 100%
-            padding: 0 2% 0 2%
             display: flex
-            max-height: 540px
-            overflow-y: scroll
             flex-direction: row
             justify-content: space-between
             margin-top: 3vw
             flex-wrap: wrap
+            padding: 10px 10px 10px 10px
 
     .new-room-button, .exit-button
-        height: 2.5vw
+        height: 4vw
         min-height: 20px
         width: 10vw
         min-width: 80px
         border: 2px solid $buttons_blue
         background-color: white
         cursor: pointer
+        border-radius: 2px
 
     .new-room-button:hover, .exit-button:hover
         background-color: $buttons_blue

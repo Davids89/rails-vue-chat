@@ -1,13 +1,14 @@
 <template>
     <div class="chat-container">
         
-        <img class="logo" :src=src>
+        <div class="chat-header">
+            <img class="logo" :src=src>
+            <button v-on:click="goBack">Volver</button>
+        </div>
 
         <div class="chat-wrapper">
             <div class="messages-wrapper">
-                <div v-for="message in messages" :key="message._id.$oid">
-                    <message v-bind="message"></message>
-                </div>
+                <message v-bind="message" v-for="message in messages" :key="message._id.$oid"></message>
             </div>
 
             <div class="input-wrapper">
@@ -48,6 +49,7 @@
                         console.log("Socket created")
                     },
                     received: (data) => {
+                        data.index = that.messages.length
                         that.messages.push(data)
                         that.scrollDownChat()
                     }
@@ -64,6 +66,11 @@
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
                         that.messages = response.data.messages
+
+                        for(var i = 0; i < that.messages.length; i++){
+                            that.messages[i].index = i
+                        }
+
                         that.scrollDownChat()
                     })
                     .catch(function(error){
@@ -78,6 +85,9 @@
                 if (event.keyCode == 13) {
                     this.sendMessage()
                 }
+            },
+            goBack: function() {
+                this.$router.push('/rooms')
             }
         },
         created: function() {
