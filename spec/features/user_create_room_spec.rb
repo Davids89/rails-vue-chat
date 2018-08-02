@@ -5,7 +5,7 @@ RSpec.feature "User creates room", type: :feature do
   include LoginHelper
 
   before do
-    login!
+    login
   end
 
   scenario 'User open modal and create room', js: true do

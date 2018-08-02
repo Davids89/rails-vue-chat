@@ -6,7 +6,7 @@ RSpec.feature "User can logout", type: :feature do
     include LoginHelper
 
     before do
-        login!
+        login
     end
 
     scenario "User can logout clicking in one button", js: :true do

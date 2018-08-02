@@ -34,11 +34,11 @@ Vue.config.productionTip = false
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    document.body.appendChild(document.createElement('vue-app'))
+    document.body.appendChild(document.createElement('vue'))
 
     const app = new Vue({
         router,
         store,
         render: h => h(App)
-    }).$mount('vue-app')
+    }).$mount('vue')
 })
