@@ -7,8 +7,29 @@
     align-items: center
     flex-direction: column
 
+    .chat-header
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 80%
+
+        button
+            height: 4vw
+            min-height: 20px
+            width: 10vw
+            min-width: 80px
+            border: 2px solid $buttons_blue
+            background-color: white
+            cursor: pointer
+            border-radius: 2px
+
+        button:hover
+            background-color: $buttons_blue
+            border: 2px solid white
+            color: white
+
     .logo
-        margin-left: 10%
         max-width: 70px
         align-self: flex-start
 
