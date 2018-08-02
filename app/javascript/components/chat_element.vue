@@ -1,6 +1,6 @@
 <template>
-    <div class="chatroom-element" v-on:click="openChat">
-        {{name}}
+    <div class="chatroom-card" v-on:click="openChat">
+        <span>{{name}}</span>
     </div>
 </template>
 

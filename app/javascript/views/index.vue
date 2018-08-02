@@ -2,7 +2,7 @@
     <div class="login-wrapper">
         <img class="logo" :src=src />
         <div class="input-wrapper">
-            <input v-model="username" type="text" placeholder="Usuario" id="username" name="username">
+            <input v-model="username" type="text" placeholder="Usuario" id="username" name="username" v-on:keyup="keyinput">
             <button v-on:click="login">Entrar</button>
         </div>
         <p class="login-error" v-if="showError">{{ error }}</p>
@@ -31,6 +31,11 @@ export default {
             } else {
                 this.error = "El nombre debe ser mayor de 2 caracteres"
                 this.showError = true
+            }
+        },
+        keyinput: function(event) {
+            if (event.keyCode == 13) {
+                this.login()
             }
         }
     },
