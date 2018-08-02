@@ -1,14 +1,18 @@
 <template>
     <div class="chatroom-list-wrapper">
-
         <div class="header">
             <img class="logo" :src=src>
-            <new-room-button></new-room-button>
             <button class="exit-button" v-on:click="logout">Salir</button>
         </div>
 
+        <div class="list-wrapper">
+            <div class="options-bar">
+                <new-room-button></new-room-button>
+            </div>
+
         <div class="chatroom-list">
             <chat-item v-bind="room" v-for="room in rooms" :key="room.id"></chat-item>
+        </div>
         </div>
     </div>
 </template>
