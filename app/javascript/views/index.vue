@@ -2,7 +2,12 @@
     <div class="login-wrapper">
         <img class="logo" :src=src />
         <div class="input-wrapper">
-            <input v-model="username" type="text" placeholder="Usuario" id="username" name="username" v-on:keyup="keyinput">
+            <div class="group">      
+                <input v-model="username" type="text" id="username" name="username" v-on:keyup="keyinput">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Usuario</label>
+            </div>
             <button v-on:click="login">Entrar</button>
         </div>
         <p class="login-error" v-if="showError">{{ error }}</p>

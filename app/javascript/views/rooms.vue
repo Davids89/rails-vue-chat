@@ -4,7 +4,7 @@
             <img class="logo" :src=src>
             <div class="buttons-container">
                 <new-room-button></new-room-button>
-                <button class="exit-button" v-on:click="logout">Salir</button>
+                <button class="exit-button" v-on:click="logout"><font-awesome-icon icon="power-off"/> Salir</button>
             </div>
             
         </div>
@@ -62,7 +62,8 @@
                         console.log("Socket created")
                     },
                     received: (data) => {
-                        this.rooms.unshift(data.room)
+                        console.log(data.room)
+                        this.rooms.push(data.room)
                     }
                 })
             },

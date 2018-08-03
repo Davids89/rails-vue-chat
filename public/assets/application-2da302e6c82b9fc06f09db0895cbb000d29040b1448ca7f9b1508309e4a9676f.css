@@ -1,0 +1,504 @@
+/* line 1, d:/cosas/vueapp/app/assets/stylesheets/components/add_chat_button.sass */
+.add-chat-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/* line 6, d:/cosas/vueapp/app/assets/stylesheets/components/add_chat_button.sass */
+.add-chat-button-wrapper .add-chat-button {
+  margin: 0 5% 0 0;
+}
+/* line 3, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card:hover {
+  background-color: #F5F5F5;
+}
+
+/* line 6, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card {
+  width: 15%;
+  height: 150px;
+  min-width: 55px;
+  min-height: 55px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 2.5% 15px 2.5%;
+  cursor: pointer;
+  position: relative;
+}
+/* line 22, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+/* line 28, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container .chatroom-data {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+/* line 33, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container .chatroom-data .logo-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* line 40, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container .chatroom-data .logo-wrapper .logo {
+  max-width: 40%;
+}
+/* line 43, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container .chatroom-data .data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  padding: 10px;
+}
+/* line 50, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container .chatroom-data .data .chatroom-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+/* line 54, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container .chatroom-data .data .chatroom-type {
+  font-style: italic;
+  font-size: 11px;
+}
+/* line 58, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.chatroom-card .container .chatroom-data .data .online-users {
+  font-size: 11px;
+}
+
+/* line 61, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.sport-type {
+  border-left: 10px solid #379B23;
+}
+
+/* line 64, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.news-type {
+  border-left: 10px solid #0066CC;
+}
+
+/* line 67, d:/cosas/vueapp/app/assets/stylesheets/components/chatroom_element.sass */
+.meet-people-type {
+  border-left: 10px solid #CC0066;
+}
+/* line 3, d:/cosas/vueapp/app/assets/stylesheets/components/message.sass */
+.message-wrapper {
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 2px;
+}
+/* line 12, d:/cosas/vueapp/app/assets/stylesheets/components/message.sass */
+.message-wrapper .user-message {
+  font-weight: bold;
+}
+
+/* line 17, d:/cosas/vueapp/app/assets/stylesheets/components/message.sass */
+.my-message {
+  align-self: flex-end;
+  background-color: #F5F5F5;
+}
+/* line 3, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+* {
+  box-sizing: border-box;
+}
+
+/* line 6, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+/* line 16, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-container {
+  width: 400px;
+  margin: 40px auto 0;
+  padding: 20px 30px;
+  background-color: #D9F6F7;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 26, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-header h3 {
+  margin-top: 0;
+  color: #2C2C2C;
+}
+
+/* line 30, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-body {
+  margin: 20px 0;
+}
+
+/* line 33, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.text-right {
+  text-align: right;
+}
+
+/* line 36, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.form-label {
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* line 40, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.form-label > .form-control {
+  margin-top: 0.5em;
+}
+
+/* line 43, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  line-height: 1.5;
+  border: 1px solid #E1E1E1;
+}
+
+/* line 50, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-enter {
+  opacity: 0;
+}
+
+/* line 53, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-leave-active {
+  opacity: 0;
+}
+
+/* line 56, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* line 61, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-default-button {
+  border: none;
+  background-color: white;
+  min-height: 30px;
+}
+
+/* line 66, d:/cosas/vueapp/app/assets/stylesheets/components/modal.sass */
+.modal-default-button:hover {
+  background-color: #E1E1E1;
+}
+/* line 3, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* line 10, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+/* line 17, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-header button {
+  height: 4vw;
+  min-height: 20px;
+  width: 10vw;
+  min-width: 80px;
+  border: 2px solid #45D7F5;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 2px;
+}
+/* line 27, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-header button:hover {
+  background-color: #45D7F5;
+  border: 2px solid white;
+  color: white;
+}
+/* line 32, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .logo {
+  max-width: 70px;
+  align-self: flex-start;
+}
+/* line 36, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper {
+  width: 80%;
+  height: 80%;
+  margin-top: 2vw;
+}
+/* line 41, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .name-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* line 46, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .sport-type-chat {
+  border-bottom: 10px solid #379B23;
+  background-color: #379B23;
+  color: white;
+}
+/* line 51, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .news-type-chat {
+  border-bottom: 10px solid #0066CC;
+  background-color: #0066CC;
+  color: white;
+}
+/* line 56, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .meet-people-type-chat {
+  border-bottom: 10px solid #CC0066;
+  background-color: #CC0066;
+  color: white;
+}
+/* line 61, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .sport-type-chat, .chat-container .chat-wrapper .news-type-chat, .chat-container .chat-wrapper .meet-people-type-chat {
+  padding: 10px 10px 10px 10px;
+}
+/* line 64, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .sport-type-chat span, .chat-container .chat-wrapper .news-type-chat span, .chat-container .chat-wrapper .meet-people-type-chat span {
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 68, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .messages-wrapper {
+  min-height: 90%;
+  border: 1px solid grey;
+  max-height: 90%;
+  overflow-y: scroll;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* line 78, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .messages-wrapper .user-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+/* line 83, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .messages-wrapper .user-wrapper .user-avatar {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+@media(max-width: 662px) {
+  /* line 89, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+  .chat-container .chat-wrapper .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+  }
+  /* line 94, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+  .chat-container .chat-wrapper .input-wrapper input {
+    min-width: 100%;
+  }
+}
+@media(min-width: 663px) {
+  /* line 98, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+  .chat-container .chat-wrapper .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    min-height: 10%;
+  }
+  /* line 103, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+  .chat-container .chat-wrapper .input-wrapper input {
+    min-width: 90%;
+  }
+  /* line 106, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+  .chat-container .chat-wrapper .input-wrapper button {
+    min-width: 10%;
+  }
+}
+/* line 110, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .input-wrapper input {
+  height: 30px;
+  padding: 0 10px 0 10px;
+}
+/* line 114, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .input-wrapper button {
+  height: 30px;
+  border: none;
+  background-color: #E1E1E1;
+  cursor: pointer;
+}
+/* line 120, d:/cosas/vueapp/app/assets/stylesheets/views/chat.sass */
+.chat-container .chat-wrapper .input-wrapper button:hover {
+  background-color: #8D8D8D;
+}
+/* line 3, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+.login-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media(max-width: 857px) {
+  /* line 11, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+  .login-wrapper .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+  }
+  /* line 16, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+  .login-wrapper .input-wrapper input {
+    width: 100%;
+  }
+  /* line 19, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+  .login-wrapper .input-wrapper input, .login-wrapper .input-wrapper button {
+    height: inherit;
+  }
+}
+@media(min-width: 858px) {
+  /* line 23, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+  .login-wrapper .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+  }
+  /* line 28, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+  .login-wrapper input {
+    width: 80%;
+  }
+}
+/* line 31, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+.login-wrapper .input-wrapper {
+  width: 30%;
+}
+/* line 34, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+.login-wrapper .input-wrapper input {
+  border: 1px solid #E1E1E1;
+  padding: 0 10px 0 10px;
+}
+/* line 38, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+.login-wrapper .input-wrapper button {
+  border: none;
+  background-color: #E1E1E1;
+  cursor: pointer;
+}
+/* line 43, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+.login-wrapper .input-wrapper button:hover {
+  background-color: #8D8D8D;
+}
+/* line 45, d:/cosas/vueapp/app/assets/stylesheets/views/index.sass */
+.login-wrapper .logo {
+  max-width: 120px;
+}
+/* line 3, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+/* line 9, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .header {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+/* line 16, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .header img.logo {
+  max-width: 70px;
+}
+/* line 19, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .header .buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+/* line 23, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .list-wrapper {
+  width: 100%;
+  height: 100%;
+  margin-top: 2vw;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+/* line 33, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .list-wrapper .options-bar {
+  width: 100%;
+  margin-top: 2vw;
+}
+/* line 37, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .list-wrapper .options-bar .new-room-button {
+  align-self: flex-start;
+}
+/* line 40, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .list-wrapper .chatroom-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 10px 10px 10px;
+}
+/* line 49, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .new-room-button, .chatroom-list-wrapper .exit-button {
+  height: 4vw;
+  min-height: 20px;
+  width: 10vw;
+  min-width: 80px;
+  border: 2px solid #45D7F5;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 2px;
+}
+/* line 59, d:/cosas/vueapp/app/assets/stylesheets/views/rooms.sass */
+.chatroom-list-wrapper .new-room-button:hover, .chatroom-list-wrapper .exit-button:hover {
+  background-color: #45D7F5;
+  border: 2px solid white;
+  color: white;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* line 18, d:/cosas/vueapp/app/assets/stylesheets/application.scss */
+html, body, .app {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #D9F6F7;
+  font-family: Helvetica, Arial, sans-serif;
+}

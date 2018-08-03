@@ -3,16 +3,19 @@
         
         <div class="chat-header">
             <img class="logo" :src=src>
-            <button v-on:click="goBack">Volver</button>
+            <button v-on:click="goBack"><font-awesome-icon icon="long-arrow-alt-left"/> Volver</button>
         </div>
 
         <div class="chat-wrapper">
+
             <div class="messages-wrapper">
                 <message v-bind="message" v-for="message in messages" :key="message._id.$oid"></message>
             </div>
 
+            <hr class="separator">
+
             <div class="input-wrapper">
-                <input type="text" placeholder="..." v-model="message" v-on:keyup="keyinput"><button v-on:click="sendMessage">Enviar</button>
+                <input type="text" placeholder="Escribe algo..." v-model="message" v-on:keyup="keyinput"><button v-on:click="sendMessage">Enviar</button>
             </div>
         </div>
     </div>
@@ -31,7 +34,11 @@
                 connection: {},
                 id: this.$route.params.id,
                 messages: [],
-                src: logo
+                src: logo,
+                room_type: "",
+                room_type_name: "",
+                room_name: "",
+                types: [{id: 'sports', value: 'Deportes'},{id: 'news', value: 'Actualidad'},{id: 'meet_people',         value: 'Conocer gente'}]
             }
         },
         components: {
@@ -64,6 +71,14 @@
                 const that = this
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
+                        that.room_name = response.data.name
+                        that.room_type = response.data.room_type
+                        that.room_type_name = that.types.find(type => {
+                            if (type !== undefined) {
+                                return type.id === response.data.room_type
+                            }
+                            return 'news'
+                        }).value
                         that.messages = response.data.messages
                         that.scrollDownChat()
                     })

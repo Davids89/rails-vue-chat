@@ -5,15 +5,23 @@
     margin: 10px 10px 10px 10px
     display: flex
     flex-direction: column
-    width: 30%
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    width: 20%
     border-radius: 2px
 
     .user-message
         font-weight: bold
+        margin-left: 5px
 
-    .text-message    
+    .text-message
+        width: 100%
+        background-color: $message_background
+        padding: 10px 20px 10px 20px
+        border-radius: 20px
 
 .my-message
     align-self: flex-end
-    background-color: $light_grey
+
+    .my-text-message
+        background-color: $my_message_background
+        display: flex
+        flex-direction: row-reverse
