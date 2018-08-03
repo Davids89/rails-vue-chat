@@ -73,7 +73,12 @@
                     .then(function(response){
                         that.room_name = response.data.name
                         that.room_type = response.data.room_type
-                        that.room_type_name = that.types.find(type => type.id === response.data.room_type).value 
+                        that.room_type_name = that.types.find(type => {
+                            if (type !== undefined) {
+                                return type.id === response.data.room_type
+                            }
+                            return 'news'
+                        }).value
                         that.messages = response.data.messages
                         that.scrollDownChat()
                     })
