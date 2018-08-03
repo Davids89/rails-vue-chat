@@ -8,7 +8,6 @@
                 
                 <div class="data">
                     <span class="chatroom-name">{{name}}</span>
-                    <span class="chatroom-type">{{ type }}</span>
                     <span class="online-users">Usuarios online: {{online_users}} </span>
                 </div>
             </div>
@@ -52,13 +51,6 @@
         methods: {
             openChat: function() {
                 this.$router.push('/rooms/' + this._id.$oid)
-            }
-        },
-        created: function() {
-            if (this.type.id !== undefined) {
-                this.type = this.types.find(type => type.id === this.room_type).value
-            } else {
-                this.type = 'news'
             }
         }
     }
