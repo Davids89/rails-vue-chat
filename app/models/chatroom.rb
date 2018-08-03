@@ -11,6 +11,7 @@ class Chatroom
 
   validates_presence_of :name
   validates_presence_of :online_users
+  validates_presence_of :room_type
 
   private
   def new_room_broadcast

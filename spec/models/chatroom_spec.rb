@@ -12,4 +12,10 @@ RSpec.describe Chatroom, type: :model do
         room.online_users = nil
         expect(room).to_not be_valid
     end
+
+    it "is not valid without room type" do
+        room = create(:chatroom)
+        room.room_type = nil
+        expect(room).to_not be_valid
+    end
 end

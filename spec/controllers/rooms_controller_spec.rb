@@ -12,7 +12,7 @@ RSpec.describe RoomsController, type: :controller do
   describe "POST #create" do
     subject do
       post :create, params: {
-        room: { name: "test"}
+        room: { name: "test", room_type: "news"}
       }
     end
 
