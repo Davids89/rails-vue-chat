@@ -62,7 +62,8 @@
                         console.log("Socket created")
                     },
                     received: (data) => {
-                        this.rooms.unshift(data.room)
+                        console.log(data.room)
+                        this.rooms.push(data.room)
                     }
                 })
             },

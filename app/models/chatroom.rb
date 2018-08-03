@@ -3,6 +3,7 @@ class Chatroom
 
   field :name, type: String
   field :online_users, type: Integer
+  field :room_type, type: String
   
   has_many :messages
 
