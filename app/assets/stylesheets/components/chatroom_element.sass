@@ -4,20 +4,21 @@
     background-color: $light_grey
 
 .chatroom-card
-    width: 30%
-    height: 150px
+    width: 25%
+    height: 100px
     min-width: 55px
     min-height: 55px
     background: #fff
     z-index: 2
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.14)
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
-    margin: 5px 0 5px 0
+    margin: 15px 2.5% 15px 2.5%
     cursor: pointer
-    border-radius: 2px
+    position: relative
+    border-radius: 4px
 
     .container
         display: flex
@@ -36,6 +37,8 @@
                 flex-direction: column
                 justify-content: center
                 align-items: center
+                background-image: linear-gradient(0deg, $gradient1 0%, $gradient2 100%)
+                border-radius: 4px 0 0 4px
 
                 .logo
                     max-width: 40%
@@ -48,8 +51,12 @@
                 padding: 10px
 
                 .chatroom-name
-                    font-weight: bold
-                    font-size: 18px
+                    font-size: 20px
+                    color: $font_color
+
+                .chatroom-type
+                    font-style: italic
+                    font-size: 11px
 
                 .online-users
                     font-size: 11px

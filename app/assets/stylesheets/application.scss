@@ -14,10 +14,12 @@
  *= require_self
  */
 
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
+
  html, body, .app {
     height: 100%;
     margin: 0;
     overflow: hidden;
-    background-color: #D9F6F7;
-    font-family: Helvetica, Arial, sans-serif;
+    background-color: #F3FFFC;
+    font-family: 'Roboto', sans-serif;
 }
