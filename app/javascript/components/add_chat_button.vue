@@ -27,11 +27,9 @@
             hideModal: function() {
                 this.modalVisible = false
             },
-            createRoom: function(name) {
+            createRoom: function(params) {
                 axios.post('/rooms', {
-                    room: {
-                        name: name
-                    }
+                    room: params
                 })
             }
         },

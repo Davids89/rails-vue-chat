@@ -10,6 +10,9 @@
                     <label class="form-label">
                         <input name="room_name" class="form-control" v-model="chatroom_name" placeholder="Nombre de la sala">
                     </label>
+                    <label class="form-label">
+                        <vue-select v-model="type_selected" :options=types></vue-select>
+                    </label>
                 </div>
                 <div class="modal-footer text-right">
                     <button class="modal-default-button cancel-button" @click="close">
@@ -27,11 +30,19 @@
 
 
 <script>
+
+    import VueSelect from 'vue-select'
+
     export default {
         data: function () {
             return {
-                chatroom_name: ""
+                chatroom_name: "",
+                types: [{label: 'Deportes', value: 'sports'},{label: 'Actualidad', value: 'news'},{label: 'Conocer gente', value: 'meet_people'}],
+                type_selected: ""
             }
+        },
+        components: {
+            VueSelect
         },
         methods: {
             close: function () {
@@ -40,7 +51,8 @@
             },
             save: function() {
                 if (this.chatroom_name.length > 0) {
-                    this.$emit('save', this.chatroom_name)
+                    const params = {'name': this.chatroom_name, 'room_type': this.type_selected.value}
+                    this.$emit('save', params)
                     this.close()
                 }
             }
