@@ -36,6 +36,34 @@
     .chat-wrapper
         width: 80%
         height: 80%
+        margin-top: 2vw
+
+        .name-wrapper
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+
+        .sport-type-chat
+            border-bottom: 10px solid $sport_type
+            background-color: $sport_type
+            color: white
+
+        .news-type-chat
+            border-bottom: 10px solid $news_type
+            background-color: $news_type
+            color: white
+
+        .meet-people-type-chat
+            border-bottom: 10px solid $meet_people_type
+            background-color: $meet_people_type
+            color: white
+
+        .sport-type-chat, .news-type-chat, .meet-people-type-chat
+            padding: 10px 10px 10px 10px
+
+            span
+                font-weight: bold
+                font-style: italic
 
         .messages-wrapper
             min-height: 90%

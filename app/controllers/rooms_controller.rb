@@ -14,9 +14,10 @@ class RoomsController < ApplicationController
   end
 
   def show
+    room = Chatroom.find(params["id"])
     messages = Message.where("room": params["id"]).formatted
 
-    render json: { messages: messages.reverse }
+    render json: { messages: messages.reverse, room_type: room.room_type, name: room.name }
   end
 
   private

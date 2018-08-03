@@ -7,6 +7,12 @@
         </div>
 
         <div class="chat-wrapper">
+
+            <div class="name-wrapper" :class="{'sport-type-chat': room_type === 'sports', 'news-type-chat': room_type === 'news', 'meet-people-type-chat': room_type === 'meet_people'}">
+                <span>{{room_name}}</span>
+                <span>{{room_type_name}}</span>
+            </div>
+
             <div class="messages-wrapper">
                 <message v-bind="message" v-for="message in messages" :key="message._id.$oid"></message>
             </div>
@@ -31,7 +37,11 @@
                 connection: {},
                 id: this.$route.params.id,
                 messages: [],
-                src: logo
+                src: logo,
+                room_type: "",
+                room_type_name: "",
+                room_name: "",
+                types: [{id: 'sports', value: 'Deportes'},{id: 'news', value: 'Actualidad'},{id: 'meet_people',         value: 'Conocer gente'}]
             }
         },
         components: {
@@ -64,6 +74,9 @@
                 const that = this
                 axios.get('/rooms/' + this.id)
                     .then(function(response){
+                        that.room_name = response.data.name
+                        that.room_type = response.data.room_type
+                        that.room_type_name = that.types.find(type => type.id === response.data.room_type).value 
                         that.messages = response.data.messages
                         that.scrollDownChat()
                     })

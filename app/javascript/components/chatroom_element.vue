@@ -54,8 +54,12 @@
                 this.$router.push('/rooms/' + this._id.$oid)
             }
         },
-        mounted: function() {
-            this.type = this.types.find(type => type.id === this.room_type).value
+        created: function() {
+            if (this.type.id !== undefined) {
+                this.type = this.types.find(type => type.id === this.room_type).value
+            } else {
+                this.type = 'news'
+            }
         }
     }
 </script>
