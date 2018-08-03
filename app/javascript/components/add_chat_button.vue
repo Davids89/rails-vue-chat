@@ -1,6 +1,7 @@
 <template>
     <div class="add-chat-button-wrapper">
         <button v-on:click="showModal" class="new-room-button">
+            <font-awesome-icon icon="plus-circle"></font-awesome-icon>
             Nueva sala
         </button>
         <chat-room-modal v-if="modalVisible" @dismiss="hideModal" @save="createRoom"></chat-room-modal>

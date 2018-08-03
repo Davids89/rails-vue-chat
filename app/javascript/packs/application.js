@@ -14,6 +14,19 @@ import Vuex from 'vuex';
 import Store from '../vuex/store.js';
 import App from '../app.vue'
 
+import '@fortawesome/fontawesome/styles.css';
+import fontawesome from '@fortawesome/fontawesome';
+import { faEdit } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+fontawesome.config = {
+    autoAddCss: false,
+  };
+  
+fontawesome.library.add(faEdit);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store(Store);

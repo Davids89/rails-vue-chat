@@ -3,22 +3,19 @@
         
         <div class="chat-header">
             <img class="logo" :src=src>
-            <button v-on:click="goBack">Volver</button>
+            <button v-on:click="goBack"><font-awesome-icon icon="long-arrow-alt-left"/> Volver</button>
         </div>
 
         <div class="chat-wrapper">
-
-            <div class="name-wrapper" :class="{'sport-type-chat': room_type === 'sports', 'news-type-chat': room_type === 'news', 'meet-people-type-chat': room_type === 'meet_people'}">
-                <span>{{room_name}}</span>
-                <span>{{room_type_name}}</span>
-            </div>
 
             <div class="messages-wrapper">
                 <message v-bind="message" v-for="message in messages" :key="message._id.$oid"></message>
             </div>
 
+            <hr class="separator">
+
             <div class="input-wrapper">
-                <input type="text" placeholder="..." v-model="message" v-on:keyup="keyinput"><button v-on:click="sendMessage">Enviar</button>
+                <input type="text" placeholder="Escribe algo..." v-model="message" v-on:keyup="keyinput"><button v-on:click="sendMessage">Enviar</button>
             </div>
         </div>
     </div>

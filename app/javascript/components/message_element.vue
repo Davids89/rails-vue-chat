@@ -1,18 +1,14 @@
 <template>
-    <div class="message-wrapper" :class="{'my-message': user == username}">
+    <div class="message-wrapper" :class="{'my-message': user === username}">
         <div class="user-wrapper">
-            <img :src=src class="user-avatar">
-            <span class="user-message">{{ user }}</span>
+            <font-awesome-icon icon="smile" /> <span class="user-message">{{ user }}</span>
         </div>
         
-        <span class="text-message">{{ text }}</span>
+        <span class="text-message" :class="{'my-text-message': user === username}">{{ text }}</span>
     </div>
 </template>
 
 <script>
-
-    import UserLogo from '../../assets/images/user.png'
-
     export default {
         props: {
             _id: {
@@ -27,7 +23,6 @@
         },
         data: function() {
             return {
-                src: UserLogo,
                 username: this.$store.state.username
             }
         }

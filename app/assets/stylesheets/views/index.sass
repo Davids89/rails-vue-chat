@@ -6,41 +6,61 @@
     justify-content: center
     align-items: center
     flex-direction: column
-
-    @media(max-width: 857px)
-        .input-wrapper
-            display: flex
-            flex-direction: column
-            height: 60px
-
-            input
-                width: 100%
-
-            input, button
-                height: inherit
-
-    @media(min-width: 858px)
-        .input-wrapper
-            display: flex
-            flex-direction: row
-            height: 30px
-
-        input
-            width: 80%
-
+    
     .input-wrapper
+        display: flex
+        flex-direction: column
+        height: 95px
         width: 30% 
 
         input
+            width: 100%
             border: 1px solid $grey
             padding: 0 10px 0 10px
 
+        input, button
+            height: inherit
+
         button
             border: none
-            background-color: $grey
+            background-color: $button_green
+            box-shadow: 0 4px 6px 0 rgba(0,0,0,0.16)
+            border-radius: 4px
             cursor: pointer
+            height: 50px
+            font-size: 14px
+            color: white
 
         button:hover
             background-color: $shadow_grey
+        .group
+            position: relative
+            margin-bottom: 15px
+            
+            input
+                font-size: 18px
+                padding: 10px 10px 10px 5px
+                display: block
+                border: none
+                border-bottom: 1px solid #757575
+                background-color: $background_blue
+
+            input:focus
+                outline: none
+
+            label
+                font-size: 18px
+                font-weight: normal
+                position: absolute
+                pointer-events: none
+                left: 5px
+                top: 10px
+                transition: 0.2s ease all
+                -moz-transition: 0.2s ease all
+                -webkit-transition: 0.2s ease all
+
+            input:focus ~ label, input:valid ~ label
+                top: -20px
+                font-size: 14px
     .logo
         max-width: 120px
