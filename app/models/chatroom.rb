@@ -8,7 +8,7 @@ class Chatroom
 
   after_create :new_room_broadcast
 
-  validates_presence_of :name
+  validates_presence_of :name, presence: true
   validates_presence_of :online_users
 
   private
