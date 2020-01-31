@@ -2,7 +2,7 @@
 
 ## Antes de lanzar el script de configuracion `install.sh`
 
-Instalar bundler.
+Instalar bundler
 
 Ejecutar mongo (mongod).
 
